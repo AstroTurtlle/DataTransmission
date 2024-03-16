@@ -2,13 +2,16 @@ function run() {
   new Vue({
     el: '#app',
     data: {
-      users: []
+      users: [],
+      name: '',
+      city: ''
     },
     created: function () {
       this.getUsers().then(response => (this.users = response.data));
     },
     methods: {
       getUsers: function() {
+        console.log(axios.get('http://localhost:3000/users'));
           return axios.get('http://localhost:3000/users');
       },
 
@@ -18,10 +21,10 @@ function run() {
       },
 
       addUser: function() {
-        axios.put('http://localhost:3000/users', {
-          name: this.name,
-          age: this.age
-        }).then(() => this.getUsers().then(response => (this.users = response.data)));
+        let user = { "name": this.name, "city": this.city };
+        console.log(user);
+        axios.post('http://localhost:3000/users', user)
+          .then(() => this.getUsers().then(response => (this.users = response.data)));
       }
     }
   });

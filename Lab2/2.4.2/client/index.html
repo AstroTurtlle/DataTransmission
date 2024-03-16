@@ -32,9 +32,9 @@
           </div>
         </li>
       </ul>
-      <input class="name" v-model="name" placeholder="Type user name" />
-      <input class="city" v-model="city" placeholder="Type user city" />
-      <button class="process-button" v-on:click="addUser()">Add a new user</button>
+      <input v-model="name" type="text" placeholder="Type user name" />
+      <input v-model="city" type="text" placeholder="Type user city" />
+      <button v-on:click="addUser">Add user</button>
     </div>
     <script src="src/app.js"></script>
   </body>

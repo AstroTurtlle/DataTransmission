@@ -9,6 +9,11 @@ api.get('/users', function (request, response) {
   response.json(users);
 });
 
+api.post('/users', function (request, response) {
+  users.push(request.body);
+  response.json('Users was added succesfully');
+});
+
 api.put('/users', function (request, response) {
   users[users.length] = request.body;
   response.json('User was saved succesfully');
