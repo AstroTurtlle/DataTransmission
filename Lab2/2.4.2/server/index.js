@@ -9,18 +9,9 @@ api.get('/users', function (request, response) {
   response.json(users);
 });
 
-var fs = require('fs');
-var path = require('path');
 api.post('/users', function (request, response) {
   users.push(request.body);
-  fs.writeFile(path.join(__dirname, 'src', 'users.json'),
-  JSON.stringify(users, null, 2), function (err) {
-    if (err) {
-      response.status(500).json('Error saving the user');
-    } else {
-      response.json('Users was added succesfully');
-    }
-  });
+  response.json('Users was added succesfully');
 });
 
 api.delete('/users', function (request, response) {
