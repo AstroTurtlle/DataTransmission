@@ -25,7 +25,6 @@ api.post('/users', function (request, response) {
 
 api.delete('/users/:id', function (request, response) {
   var id = request.params.id;
-  console.log(id);
   users.splice(id, 1);
   fs.writeFile(path.join(__dirname, 'src', 'users.json'),
   JSON.stringify(users, null, 2), function (err) {
@@ -37,14 +36,14 @@ api.delete('/users/:id', function (request, response) {
   });
 });
 
-api.put('/users', function (request, response) {
-  users[users.request.params.index] = request.params.new_user;
+api.put('/users/:id', function (request, response) {
+  users[request.params.id] = request.body;
   fs.writeFile(path.join(__dirname, 'src', 'users.json'),
   JSON.stringify(users, null, 2), function (err) {
     if (err) {
       response.status(500).json('Error saving the user');
     } else {
-      response.json('Users was saved succesfully');
+      response.json('User was saved succesfully');
     }
   });
 });

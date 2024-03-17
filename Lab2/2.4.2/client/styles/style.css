@@ -69,3 +69,12 @@ body {
   content: '\21A5';
   color: blue;
 }
+
+.confirmButton {
+  margin-left: 0.3em;
+}
+
+.confirmButton::before {
+  content: '\2713';
+  color: green;
+}

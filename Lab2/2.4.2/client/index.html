@@ -27,11 +27,16 @@
 
         <li v-for="(user, index) in users">
           <div class="user-row">
-            <div class="user-name">{{ user.name }}</div>
-            <div class="user-city">{{ user.city }}</div>
+            <div class="user-name" v-if="updateIndex !== index">{{ user.name }}</div>
+            <input v-else v-model="updateName" type="text" />
+
+            <div class="user-city" v-if="updateIndex !== index">{{ user.city }}</div>
+            <input v-else v-model="updateCity" type="text" />
+
             <div class="buttons">
-              <button class="removeButton" v-on:click="deleteUser(index)"></button>
-              <button class="updateButton" v-on:click="updateUser(index)"></button>              
+              <button class="removeButton" v-on:click="deleteUser(index)" v-if="updateIndex !== index"></button>
+              <button class="updateButton" v-on:click="pre_update(index)" v-if="updateIndex !== index"></button>
+              <button v-else class="confirmButton" v-on:click="confirmUpdate(index)"></button>
             </div>
           </div>
         </li>
