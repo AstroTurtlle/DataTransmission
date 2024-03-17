@@ -25,9 +25,6 @@ body {
   text-align: left;
   font-weight: bold;
   border-bottom: 2px solid #0053c0;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
 }
 
 .user-row {
@@ -35,7 +32,6 @@ body {
   padding: 15px 0px 5px 0px;
   text-align: left;
   display: flex;
-  justify-content: space-between;
 }
 
 .user-row:hover {
@@ -43,14 +39,33 @@ body {
   cursor: pointer;
 }
 
-.removeButton::before {
-  content: 'X';
-  opacity: 1;
-  background-color: red;
-  font-size: 20px;
+.user-name {
+  width: 40%;
+  display: inline-block;
 }
 
-.user-name .user-city {
-  width: 50%;
-  text-align: left;
+.user-city {
+  width: 40%;
+  display: inline-block;
+}
+
+.buttons {
+  display: flex;
+  margin-left:auto;
+  margin-right: 0.3em;
+  
+}
+
+.removeButton::before {
+  content: '\2718';
+  color: red;
+}
+
+.updateButton {
+  margin-left: 0.3em;
+}
+
+.updateButton::before {
+  content: '\21A5';
+  color: blue;
 }

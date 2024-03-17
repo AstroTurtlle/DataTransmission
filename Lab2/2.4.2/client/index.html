@@ -29,7 +29,10 @@
           <div class="user-row">
             <div class="user-name">{{ user.name }}</div>
             <div class="user-city">{{ user.city }}</div>
-            <button class="removeButton" v-on:click="deleteUser(index)"></button>
+            <div class="buttons">
+              <button class="removeButton" v-on:click="deleteUser(index)"></button>
+              <button class="updateButton" v-on:click="updateUser(index)"></button>              
+            </div>
           </div>
         </li>
       </ul>
