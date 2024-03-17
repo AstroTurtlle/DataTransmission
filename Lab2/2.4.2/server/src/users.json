@@ -1,6 +1,30 @@
 [
-  { "name": "Cristina", "city": "Sebes" },
-  { "name": "Andrei", "city": "Satu Mare" },
-  { "name": "Sebastian", "city": "Bistrita-Nasaud" },
-  { "name": "Maria", "city": "Cluj-Napoca" }
+  {
+    "name": "Cristina",
+    "city": "Sebes"
+  },
+  {
+    "name": "Andrei",
+    "city": "Satu Mare"
+  },
+  {
+    "name": "Sebastian",
+    "city": "Bistrita-Nasaud"
+  },
+  {
+    "name": "Maria",
+    "city": "Cluj-Napoca"
+  },
+  {
+    "name": "Radu",
+    "city": "Oradea"
+  },
+  {
+    "name": "Mircea",
+    "city": "Eindhoven"
+  },
+  {
+    "name": "Donatella",
+    "city": "Piatra Craiului"
+  }
 ]

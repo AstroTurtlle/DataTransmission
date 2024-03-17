@@ -22,7 +22,6 @@ function run() {
 
       addUser: function() {
         let user = { "name": this.name, "city": this.city };
-        console.log(user);
         axios.post('http://localhost:3000/users', user)
           .then(() => this.getUsers().then(response => (this.users = response.data)));
       }
