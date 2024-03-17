@@ -28,7 +28,8 @@
         <li v-for="(user, index) in users">
           <div class="user-row">
             <div class="user-name">{{ user.name }}</div>
-            <div class="user-city"><i>{{ user.city }}</i></div>
+            <div class="user-city">{{ user.city }}</div>
+            <button class="removeButton" v-on:click="deleteUser(index)"></button>
           </div>
         </li>
       </ul>

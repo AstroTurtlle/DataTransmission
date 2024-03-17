@@ -16,7 +16,8 @@ function run() {
       },
 
       deleteUser: function(id) {
-        axios.delete(`http://localhost:3000/users/${id}`)
+        let user = { "name": this.name, "city": this.city };
+        axios.delete(`http://localhost:3000/users`, index=id, new_user=user)
           .then(() => this.getUsers().then(response => (this.users = response.data)));
       },
 
